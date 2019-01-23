@@ -1,10 +1,10 @@
 import { snapshotDateFilter } from "./get-ebs-snapshots";
 
 (async function test() {
-  const expireDate = "16 Oct 2018";
+  const expireDate = "22 Jan 2019";
   const snapshots = await snapshotDateFilter(
     expireDate,
-    ["355823639233"],
+    ["704909965980"],
     "us-west-2"
   );
   console.log(snapshots.slice(0, 10));

@@ -2,13 +2,12 @@ import AWS from "aws-sdk";
 import { snapshotDateFilter } from "./get-ebs-snapshots";
 import { getAWSRegionNames } from "./get-region-names";
 
-export async function deleteSnapshots() {
-  const ownerId = ["704909965980"];
-  const regions = await getAWSRegionNames("us-west-2");
+export async function deleteSnapshots(expireDate, ownerId, initRegion) {
+  const regions = await getAWSRegionNames(initRegion);
   for (const region of regions) {
     console.log(`Finding snapshots in ${region}`);
     const expiredSnapshots = await snapshotDateFilter(
-      "01 Jan 2019",
+      expireDate,
       ownerId,
       region
     );
@@ -28,5 +27,3 @@ export async function deleteSnapshots() {
     }
   }
 }
-
-deleteSnapshots();
