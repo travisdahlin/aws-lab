@@ -3,11 +3,29 @@
 ## Documentation
 
 This project will use jsdoc to create documenation from code comments.
-Example:
+Example description:
 
 ```javascript
 /** This is a description of the test function */
 function test() {}
+```
+
+Adding more information with tags:
+
+```javascript
+/**
+ * Description goes here
+ * @constructor
+ * @param {string} var1 - A string parameter
+ * @param {string} var2 - Another string parameter
+ */
+function test(varl, var2) {}
+```
+
+Run jsdocs to generate html documentation in the ./out directory:
+
+```bash
+jsdoc <filename>.js
 ```
 
 ## Babel
