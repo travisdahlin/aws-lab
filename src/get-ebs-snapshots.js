@@ -1,9 +1,10 @@
 import AWS from "aws-sdk";
 
 /**
- * Returns array of snapshots filtred by an expiration value.
+ * Filter EBS snapshots by an expiration date.
  * @param {dateString} expireDate - ISO 8601 datestring.
  * @param {string} region - The AWS region to query.
+ * @returns {array} Array of objects.
  */
 export async function snapshotDateFilter(expireDate, region) {
   const ec2 = new AWS.EC2({ region: region });

@@ -1,9 +1,9 @@
 import AWS from "aws-sdk";
 
 /**
- * the getAWSRegionNames function retrieves an array all AWS region names.
- * @constructor
+ * Retrieves an array all AWS region names.
  * @param {string} initRegion - Region used to query for all the other regions.
+ * @return {array} Array of strings.
  */
 export async function getAWSRegionNames(initRegion) {
   const ec2 = new AWS.EC2({ region: initRegion });
